@@ -23,4 +23,10 @@
   padding: 8px;
   border-radius: 8px;
 }
+
+.button:hover {
+  background-color: #46cdcf;
+  color: #fff;
+  cursor: pointer;
+}
 /*# sourceMappingURL=CssModules.module.css.map */
