@@ -21,3 +21,5 @@
 },
 "emmet.showExpandedAbbreviation": "always"
 ```
+
+# yarn add -D node-sass できない
