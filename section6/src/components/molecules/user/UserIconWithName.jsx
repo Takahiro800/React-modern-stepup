@@ -4,8 +4,8 @@ import { UserContext } from "../../../providers/UserProvider";
 
 export const UserIconWithName = (props) => {
   const { image, name } = props;
-  const { userInfo } = useContext(UserContext);
-  const isAdmin = userInfo ? userInfo.isAdmin : false;
+  const { userInfo, setUserInfo } = useContext(UserContext);
+  const isAdmin = userInfo ? userInfo.isAdmin : setUserInfo({ isAdmin: false });
 
   return (
     <SContainer>
