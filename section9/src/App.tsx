@@ -4,6 +4,7 @@ import './App.css';
 import { Practice1 } from './practice/Practice';
 import { Practice2 } from './practice/Practice2';
 import { Practice3 } from './practice/Practice3';
+import { Practice4 } from './practice/Practice4';
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <Practice1 />
       <Practice2 />
       <Practice3 />
+      <Practice4 />
     </div>
   );
 }
