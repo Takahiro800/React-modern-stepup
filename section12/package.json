@@ -44,6 +44,8 @@
     "@chakra-ui/react": "^1.6.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "framer-motion": "^4"
+    "@types/react-router-dom": "^5.1.7",
+    "framer-motion": "^4",
+    "react-router-dom": "^5.2.0"
   }
 }
