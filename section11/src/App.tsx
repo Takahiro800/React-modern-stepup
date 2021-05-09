@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { UserCard } from "./components/UserCard";
-import axios from "axios";
-import { User } from "./types/api/user";
-import { UserProfile } from "./types/userProfile";
+import { useAllUsers } from "./hooks/useAllUsers";
 
 export default function App() {
-  const onClickFetchUser = () => {};
+  const { getUsers, userProfiles, loading, error } = useAllUsers();
+
+  const onClickFetchUser = () => getUsers();
 
   return (
     <div className="App">
