@@ -1,14 +1,29 @@
+import { FormControl, FormLabel } from "@chakra-ui/form-control";
+import { useDisclosure } from "@chakra-ui/hooks";
 import { Image } from "@chakra-ui/image";
-import { Center, Wrap, WrapItem } from "@chakra-ui/layout";
+import { Input } from "@chakra-ui/input";
+import { Center, Stack, Wrap, WrapItem } from "@chakra-ui/layout";
+import {
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+} from "@chakra-ui/modal";
 import { Spinner } from "@chakra-ui/spinner";
-import { memo, useEffect, VFC } from "react";
+import { memo, useCallback, useEffect, VFC } from "react";
 import { useAllUsers } from "../../hooks/useAllUsers";
 import { UserCard } from "../organisms/user/UserCard";
+import { UserDetailModal } from "../organisms/user/UserDetailModal";
 
 export const UserManagement: VFC = memo(() => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { getUsers, users, loading } = useAllUsers();
 
   useEffect(() => getUsers(), []);
+
+  const onClickUser = useCallback(() => onOpen(), []);
 
   return (
     <>
@@ -24,11 +39,13 @@ export const UserManagement: VFC = memo(() => {
                 imageUrl="https://source.unsplash.com/random"
                 userName={user.username}
                 fullName={user.name}
+                onClick={onClickUser}
               />
             </WrapItem>
           ))}
         </Wrap>
       )}
+      <UserDetailModal isOpen={isOpen} onClose={onClose} />
     </>
   );
 });
