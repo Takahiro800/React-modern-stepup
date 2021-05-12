@@ -1,16 +1,5 @@
-import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { useDisclosure } from "@chakra-ui/hooks";
-import { Image } from "@chakra-ui/image";
-import { Input } from "@chakra-ui/input";
 import { Center, Stack, Wrap, WrapItem } from "@chakra-ui/layout";
-import {
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
-} from "@chakra-ui/modal";
 import { Spinner } from "@chakra-ui/spinner";
 import { memo, useCallback, useEffect, VFC } from "react";
 import { useAllUsers } from "../../hooks/useAllUsers";
@@ -56,7 +45,12 @@ export const UserManagement: VFC = memo(() => {
           ))}
         </Wrap>
       )}
-      <UserDetailModal isOpen={isOpen} onClose={onClose} user={selectedUser} />
+      <UserDetailModal
+        isAdmin={loginUser?.isAdmin ?? false}
+        isOpen={isOpen}
+        onClose={onClose}
+        user={selectedUser}
+      />
     </>
   );
 });
