@@ -32,7 +32,7 @@ export const UserCard: VFC<Props> = memo((props) => {
           alt={userName}
           m="auto"
         />
-        <Text fontSize="lg" fontWegiht="bold">
+        <Text fontSize="lg" fontWeight="bold">
           {userName}
         </Text>
         <Text fontSize="sm" color="gray">
